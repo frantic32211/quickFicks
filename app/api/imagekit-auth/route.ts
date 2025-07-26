@@ -8,7 +8,7 @@ export async function GET() {
             publicKey: process.env.NEXT_PUBLIC_PUBLIC_KEY as string,
         })
         return Response.json({ authenticationParameters, publicKey: process.env.NEXT_PUBLIC_PUBLIC_KEY })
-    } catch (error) {
+    } catch {
         return Response.json({
             error: "Authentication for Imagekit failed",
         }, {

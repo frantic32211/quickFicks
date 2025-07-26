@@ -37,8 +37,12 @@ export default function RegisterPage() {
 
       showNotification("Registration successful", "success");
       router.push("/login");
-    } catch (error: any) {
-      showNotification(error.message, "error");
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        showNotification(error.message, "error");
+      } else {
+        showNotification("An unknown error occurred", "error");
+      }
     }
   };
 

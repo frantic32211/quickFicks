@@ -3,9 +3,10 @@
 import { upload } from "@imagekit/next";
 import { useState } from "react";
 import { Loader2 } from "lucide-react";
+import type { UploadResponse } from "@imagekit/next";
 
 interface FileUploadProps {
-    onSuccess: (res: any) => void
+    onSuccess: (res: UploadResponse) => void
     onProgress?: (progress: number) => void
     fileType?: "image" | "video"
 }
