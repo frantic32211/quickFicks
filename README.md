@@ -1,36 +1,137 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🎬 QuickFicks
 
-## Getting Started
+**QuickFicks** is a modern **Next.js** application for uploading and managing video reels using **ImageKit**. It includes user authentication, a stylish video feed, and a clean, responsive UI powered by Tailwind CSS and DaisyUI.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🚀 Features
+
+- 🔐 **User Authentication** with NextAuth.js (JWT)
+- 📹 **Video Upload & Streaming** via ImageKit
+- 🎨 **Beautiful UI** using Tailwind CSS + DaisyUI
+- ⚡ **Fast & Scalable** with Next.js 15 and React 19
+- 💾 MongoDB Database Integration with Mongoose
+- 📱 Fully Responsive Design (Mobile-first)
+- 🧠 Type-safe Codebase with TypeScript
+
+---
+
+## 🛠️ Tech Stack
+
+| Area           | Technology            |
+| -------------- | --------------------- |
+| Frontend       | Next.js 15, React 19  |
+| Styling        | Tailwind CSS, DaisyUI |
+| Authentication | NextAuth.js (JWT)     |
+| File Storage   | ImageKit              |
+| Database       | MongoDB + Mongoose    |
+| Forms          | React Hook Form       |
+| Language       | TypeScript            |
+
+---
+
+## 📦 Prerequisites
+
+Before starting, ensure you have:
+
+- Node.js (LTS version)
+- MongoDB (Local or Atlas)
+- ImageKit Account (with public & private keys)
+
+---
+
+## 🧑‍💻 Getting Started
+
+1. **Clone the repository**:
+
+   ```bash
+   git clone <your-repository-url>
+   cd quickficks
+
+   ```
+
+2. **Install dependencies**:
+
+   ```bash
+   npm install
+   ```
+
+3. **Configure environment variables**:
+
+   - Copy `.env.example` to `.env`
+   - Fill in all necessary keys as shown below
+
+4. **Start the development server**:
+
+   ```bash
+   npm run dev
+   ```
+
+5. Visit [http://localhost:3000](http://localhost:3000) in your browser to see the app running.
+
+---
+
+## 🔐 Environment Variables
+
+Create a `.env` file at the project root with the following:
+
+```env
+# MongoDB
+MONGODB_URI=
+
+# NextAuth
+NEXTAUTH_SECRET=
+
+# ImageKit
+NEXT_PUBLIC_PUBLIC_KEY=
+IMAGEKIT_PRIVATE_KEY=
+NEXT_PUBLIC_URL_ENDPOINT=https://ik.imagekit.io/your_path/
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🗂️ Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+quickficks/
+├── app/                   # Next.js 15 app directory
+│   ├── api/               # API routes (auth, upload)
+│   ├── components/        # Reusable UI components
+│   ├── login/             # Login page
+│   ├── register/          # Registration page
+│   ├── upload/            # Video upload functionality
+│   └── page.tsx           # Home page (video feed)
+├── lib/                   # Utility functions
+├── models/                # Mongoose database models
+├── public/                # Static files and assets
+├── types.d.ts             # Global TypeScript types
+├── .env.example           # Sample env file
+└── README.md              # Project documentation
+```
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 📜 Available Scripts
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| Script          | Description                    |
+| --------------- | ------------------------------ |
+| `npm run dev`   | Start local development server |
+| `npm run build` | Create a production build      |
+| `npm run start` | Start production server        |
+| `npm run lint`  | Run ESLint to fix code issues  |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 📄 License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This project is licensed under the [MIT License](LICENSE).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 🙌 Contributing
+
+Pull requests are welcome! For major changes, open an issue first to discuss what you’d like to change.
+
+---
+
+Built with ❤️ using **Next.js**, **ImageKit**, and **(Daisy UI)Tailwind CSS**.
