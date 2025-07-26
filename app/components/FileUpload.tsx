@@ -3,10 +3,11 @@
 import { upload } from "@imagekit/next";
 import { useState } from "react";
 import { Loader2 } from "lucide-react";
-import type { UploadResponse } from "@imagekit/next";
+import { ImageKitUploadResponse } from "../types/imagekit";
+
 
 interface FileUploadProps {
-    onSuccess: (res: UploadResponse) => void
+    onSuccess: (res: ImageKitUploadResponse) => void
     onProgress?: (progress: number) => void
     fileType?: "image" | "video"
 }
@@ -71,7 +72,7 @@ const FileUpload = ({ onSuccess, onProgress, fileType }: FileUploadProps) => {
                 },
             });
 
-            onSuccess(res)
+            onSuccess(res as ImageKitUploadResponse);
 
         } catch (error) {
             console.error("Upload failed", error)

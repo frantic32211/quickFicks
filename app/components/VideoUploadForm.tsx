@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { IKUploadResponse } from "imagekitio-next/dist/types/components/IKUpload/props";
+import { ImageKitUploadResponse } from "../types/imagekit";
 import { Loader2 } from "lucide-react";
 import { useNotification } from "./Notification";
 import { apiClient } from "@/lib/api-client";
@@ -37,7 +37,7 @@ export default function VideoUploadForm() {
     },
   });
 
-  const handleUploadSuccess = (response: IKUploadResponse) => {
+  const handleUploadSuccess = (response: ImageKitUploadResponse) => {
     setValue("videoUrl", response.filePath);
     setValue("thumbnailUrl", response.thumbnailUrl || response.filePath);
     showNotification("Video uploaded successfully!", "success");
